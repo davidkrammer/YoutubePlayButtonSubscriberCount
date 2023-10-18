@@ -3,8 +3,7 @@
 
 
 ## 1. Fill in your WIFI Credentials
-`const char* WIFI_SSID = "";`
-`const char* WIFI_PASSWORD = "";`
+`const char* WIFI_SSID = "";` `const char* WIFI_PASSWORD = "";`
 
 &nbsp;
 
@@ -37,7 +36,7 @@ Step 9: Copy the key and paste it into the code `#define  API_KEY  ""`
 - [YoutubeApi](https://github.com/witnessmenow/arduino-youtube-api)
 - [ArduinoJson](https://www.arduino.cc/reference/en/libraries/arduinojson/)
 - [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
-- 
+
 &nbsp;
 
 
