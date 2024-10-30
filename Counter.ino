@@ -120,7 +120,7 @@ void handleFetchSubscribers() {
 }
 
 
-int loops = 60*1000;
+int loops = 0;
 int max_loops = 60*1000;
 
 void loop() {
