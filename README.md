@@ -1,4 +1,3 @@
-
 # Getting Started
 
 
@@ -36,6 +35,7 @@ Step 9: Copy the key and paste it into the code `#define  API_KEY  ""`
 - [YoutubeApi](https://github.com/witnessmenow/arduino-youtube-api)
 - [ArduinoJson](https://www.arduino.cc/reference/en/libraries/arduinojson/)
 - [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
+- [Ticker](https://github.com/esp8266/Arduino/tree/master/libraries/Ticker)
 
 &nbsp;
 

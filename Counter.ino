@@ -2,6 +2,7 @@
 #include <WiFiClientSecure.h>
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
+#include <Ticker.h>
 
 #include <YoutubeApi.h>
 #include <ArduinoJson.h>
@@ -29,6 +30,8 @@ const char* WIFI_PASSWORD = ""; //ADD YOUR PASS HERE
 #define API_KEY "" //ADD YOUR API KEY HERE
 WiFiClientSecure client;
 YoutubeApi api(API_KEY, client);
+
+Ticker fetchSubscribersTimer;
 
 void setup() {
   Serial.begin(115200);
@@ -64,6 +67,8 @@ void setup() {
   myDisplay.displayClear();
   myDisplay.print("Done!");
   client.setInsecure();
+
+  fetchSubscribersTimer.attach(3600, handleFetchSubscribers); // Call handleFetchSubscribers every hour
 }
 
 void led_set(uint8 R, uint8 G, uint8 B) {
@@ -120,9 +125,6 @@ void handleFetchSubscribers() {
 }
 
 
-int loops = 60*60*1000;
-int max_loops = 60*60*1000;
-
 void loop() {
   //run every second
   led_set(50, 50, 50);
@@ -133,10 +135,5 @@ void loop() {
 
   led_set(50, 50, 50);
   led_set(80, 100, 80);
-  loops = loops + 1;
-
-  if (loops >= max_loops) {
-    handleFetchSubscribers();
-    loops = 0;
-  }
+  fetchSubscribersTimer.update();
 }
